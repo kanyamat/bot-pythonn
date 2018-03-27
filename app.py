@@ -9,7 +9,7 @@ LINE_API_KEY = 'dDwi/B2LMskMDYNMvdiR91FoSrWEKVy72KhxiMJBcgyqfYYUhhuuq4J2Y1vuhY0M
 app = Flask(__name__)
 
 
-@app.route('/bot')
+@app.route('/')
 def index():
     return 'This is chatbot server.'
 
