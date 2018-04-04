@@ -29,12 +29,11 @@ def bot():
     #$replyToken  = $events['events'][0]['replyToken'];
     #$user = $events['events'][0]['source']['userId'];
     #$userMessage = $events['events'][0]['message']['text'];
-    
-    
-    
+     
     userID = msg_in_json["events"][0]['source']['userId']
-    #msgType = msg_in_json["events"][0]['message']['type']
-    msgType = msg_in_json["events"][0]['message']['text']
+    msgType = msg_in_json["events"][0]['message']['type']
+    
+    #msgType = msg_in_json["events"][0]['message']['text']
     # ตรวจสอบว่า ที่ส่งเข้ามาเป็น text รึป่าว (อาจเป็น รูป, location อะไรแบบนี้ได้ครับ)
     # if msgType != 'text':
     #    reply(replyToken, ['Only text is allowed.'])
@@ -70,7 +69,7 @@ def reply(replyToken, textList):
     for text in textList:
         msgs.append({
             "type": "text",
-            "text": text
+            "text": "abcd"
         })
     data = json.dumps({
         "replyToken": replyToken,
