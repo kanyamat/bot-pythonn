@@ -25,7 +25,7 @@ def bot():
     replyToken = msg_in_json["events"][0]['replyToken']
 
     # ส่วนนี้ดึงข้อมูลพื้นฐานออกมาจาก json (เผื่อ)
-    #userID = msg_in_json["events"][0]['source']['userId']
+    userID = msg_in_json["events"][0]['source']['userId']
     msgType = msg_in_json["events"][0]['message']['type']
 
     # ตรวจสอบว่า ที่ส่งเข้ามาเป็น text รึป่าว (อาจเป็น รูป, location อะไรแบบนี้ได้ครับ)
@@ -40,7 +40,7 @@ def bot():
         reply(replyToken, ['Only text is allowed.'])
         return 'OK', 200
 
-    #text = msg_in_json["events"][0]['message']['text'].lower().strip()
+    text = msg_in_json["events"][0]['message']['text'].lower().strip()
 
     # ตอบข้อความ "นี่คือรูปแบบข้อความที่รับส่ง" กลับไป
     replyStack.append('นี่คือรูปแบบข้อความที่รับส่ง')
